@@ -3,7 +3,7 @@ using System.IO;
 using System.Media;
 
 namespace cybersecurity_awareness_chatbot
-{//sstart of namespace
+{//start of namespace
     public class voice_greeting
     {//start of class
         public voice_greeting()
@@ -34,15 +34,21 @@ namespace cybersecurity_awareness_chatbot
                 //Loading the audio
                 voice_play.Load();
 
-                //Playing the audio synchronously
-                voice_play.PlaySync();
+                //Playing the audio
+                voice_play.Play();
 
             }//end of try statement
             catch (FileNotFoundException ex)
             {//start of catch statement
 
+                //setting the color to red to indicate an error
+                Console.ForegroundColor = ConsoleColor.Red;
+
                 //catching the exception if the audio file is not found and printing the message
                 Console.WriteLine($"Audio file not found: {ex.Message}");
+
+                //resetting the color
+                Console.ResetColor();
 
             }//end of catch statement
 

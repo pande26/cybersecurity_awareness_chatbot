@@ -14,6 +14,9 @@ namespace cybersecurity_awareness_chatbot
             //creating an instance of voice_greeting class with constructor
             new voice_greeting() { };
 
+            //creating an instance of ascii_logo class with constructor
+            new ascii_logo();
+
         }//end of main method
 
     }//end of class
