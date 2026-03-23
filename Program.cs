@@ -11,6 +11,9 @@ namespace cybersecurity_awareness_chatbot
         static void Main(string[] args)
         {//start of main method
 
+            //creating an instance of voice_greeting class with constructor
+            new voice_greeting() { };
+
         }//end of main method
 
     }//end of class
