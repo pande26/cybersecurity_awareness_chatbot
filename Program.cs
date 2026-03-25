@@ -17,6 +17,14 @@ namespace cybersecurity_awareness_chatbot
             //creating an instance of ascii_logo class with constructor
             new ascii_logo();
 
+            /*creating an instance of the welcome_username class
+             * with an object name welcome_and_collect*/
+            welcome_username welcome_and_collect = new welcome_username();
+
+            welcome_and_collect.welcome();
+
+            welcome_and_collect.ask_username();
+
         }//end of main method
 
     }//end of class
