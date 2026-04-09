@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Media;
-
+ 
 namespace cybersecurity_awareness_chatbot
 {//start of namespace
     public class voice_greeting
@@ -9,7 +9,7 @@ namespace cybersecurity_awareness_chatbot
         public voice_greeting()
         {//start of constructor
 
-            //calling the play_message method to play the message
+            //calling the play_message() method to play the message
             play_message();
 
         }//end of constructor

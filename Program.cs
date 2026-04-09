@@ -21,9 +21,18 @@ namespace cybersecurity_awareness_chatbot
              * with an object name welcome_and_collect*/
             welcome_username welcome_and_collect = new welcome_username();
 
+            //calling the welcome method
             welcome_and_collect.welcome();
 
+            //calling the ask_username method
             welcome_and_collect.ask_username();
+
+            // Get the username from the welcome class
+            string userName = welcome_and_collect.get_username();
+
+            /*creating an instance of the response_system class
+            with an object name response*/
+            response_system response = new response_system(userName); 
 
         }//end of main method
 

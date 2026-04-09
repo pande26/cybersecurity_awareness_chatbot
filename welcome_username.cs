@@ -16,7 +16,7 @@ namespace cybersecurity_awareness_chatbot
             //message to welcome the user
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("╔═══════════════════════════════════════════════════════════╗");
-            Console.WriteLine("║                 Welcome to Valarie Chatbot                ║");
+            Console.WriteLine("║                 Welcome to Valerie Chatbot                ║");
             Console.WriteLine("╚═══════════════════════════════════════════════════════════╝");
 
             //reset color
@@ -30,7 +30,7 @@ namespace cybersecurity_awareness_chatbot
 
             //asking the user for their name
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("VALARIE: ");
+            Console.WriteLine("VALERIE: ");
             Console.ForegroundColor = ConsoleColor.DarkGray;
             Console.WriteLine("Enter your name..");
 
@@ -62,7 +62,7 @@ namespace cybersecurity_awareness_chatbot
 
                 //susccess message
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write("VALARIE: ");
+                Console.Write("VALERIE: ");
 
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Hey, " + username);
@@ -79,7 +79,7 @@ namespace cybersecurity_awareness_chatbot
 
                 //error message
                 Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write("VALARIE: ");
+                Console.Write("VALERIE: ");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Please enter name...");
 
@@ -89,6 +89,15 @@ namespace cybersecurity_awareness_chatbot
             }//end of else statement
 
         }//end of empty() method
+
+        // Method to return the username
+        public string get_username()
+        {//start of get_username method
+
+            //returning the username
+            return username;
+
+        }//end of get_username method
 
     }//end of class
 
