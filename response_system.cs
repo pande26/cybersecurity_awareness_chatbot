@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace cybersecurity_awareness_chatbot
 {//start of namespace
@@ -9,27 +10,82 @@ namespace cybersecurity_awareness_chatbot
         // Global variable to store the username
         private string username = string.Empty;
 
+        //constant varables for typing effect timing
+        private const int TYPING_DELAY_MS = 25;      // 25 milliseconds per character
+        private const int SENTENCE_PAUSE_MS = 150;   // Pause at sentence endings
+
         // Constructor that accepts the username from your welcome class
         public response_system(string userName)
         {//start of constructor
 
+            //store the username in the global variable
             username = userName;
+
+            //start the conversation loop
             start_conversation();
 
         }//end of constructor
+
+
+        //method to simulate typing effect for responses
+        private void type_text(string text, ConsoleColor color)
+        {//start of type_text method
+            Console.ForegroundColor = color;
+            foreach (char c in text)
+            {
+                Console.Write(c);
+                Thread.Sleep(TYPING_DELAY_MS);
+            }
+            Console.ResetColor();
+        }//end of type_text method
+
+        //method to simulate typing effect for responses with line breaks
+        private void type_text_line(string text, ConsoleColor color)
+        {//start of type_text_line method
+            Console.ForegroundColor = color;
+            foreach (char c in text)
+            {
+                Console.Write(c);
+                Thread.Sleep(TYPING_DELAY_MS);
+            }
+            Console.WriteLine();
+            Console.ResetColor();
+        }//end of type_text_line method
+
+        //method to simulate typing effect for responses with natural pauses
+        private void type_text_natural(string text, ConsoleColor color)
+        {//start of type_text_natural method
+            Console.ForegroundColor = color;
+            for (int i = 0; i < text.Length; i++)
+            {
+                Console.Write(text[i]);
+
+                // Pause longer at sentence endings
+                if (text[i] == '.' || text[i] == '!' || text[i] == '?')
+                {
+                    Thread.Sleep(SENTENCE_PAUSE_MS);
+                }
+                else
+                {
+                    Thread.Sleep(TYPING_DELAY_MS);
+                }
+            }
+            Console.WriteLine();
+            Console.ResetColor();
+        }//end of type_text_natural method
 
         //method to handle the conversation loop
         private void start_conversation()
         {//start of start_conversation method
 
-            Console.ForegroundColor = ConsoleColor.Blue;
-            Console.Write("VALERIE: ");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine($"I'm ready to answer your cybersecurity questions, {username}!");
-            Console.ForegroundColor = ConsoleColor.DarkGray;
-            Console.WriteLine("You can ask me about passwords, phishing, or safe browsing.");
-            Console.WriteLine("Type 'exit' or 'quit' to end the conversation.\n");
-            Console.ResetColor();
+            type_text("VALERIE: ", ConsoleColor.Blue);
+            type_text_line($"I'm ready to answer your cybersecurity questions, {username}!", ConsoleColor.Green);
+
+            type_text("VALERIE: ", ConsoleColor.Blue);
+            type_text_line("You can ask me about passwords, phishing, or safe browsing.", ConsoleColor.DarkGray);
+
+            type_text("VALERIE: ", ConsoleColor.Blue);
+            type_text_line("Type 'exit' or 'quit' to end the conversation.\n", ConsoleColor.DarkGray);
 
             // do-while loop to keep the conversation going
             string userInput;
@@ -55,11 +111,8 @@ namespace cybersecurity_awareness_chatbot
 
                 //get and display response
                 string response = get_response(userInput);
-                Console.ForegroundColor = ConsoleColor.Blue;
-                Console.Write("VALERIE: ");
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine(response);
-                Console.ResetColor();
+                type_text("VALERIE: ", ConsoleColor.Blue);
+                type_text_natural(response, ConsoleColor.White);  // Using natural typing effect
                 Console.WriteLine();
 
             } while (true);//end of do-while loop
