@@ -100,3 +100,75 @@ cybersecurity_awareness_chatbot/
 - Windows Operating System
 - .NET Framework
 - Visual Studio
+
+How to Use the Chatbot
+- Launch the application - Voice greeting plays automatically
+- View the ASCII logo - Cybersecurity-themed ASCII art displays
+- Enter your name - Type your name when prompted
+- Ask questions - Type your cybersecurity questions
+- Exit - Type 'exit' or 'quit' to end
+
+Example Questions to Ask:
+General Questions:
+- "How are you?"
+- "What's your purpose?"
+- "What can I ask you about?"
+
+Password Safety:
+- "Tell me about passwords"
+- "How do I create a strong password?"
+- "Password safety tips"
+
+Phishing:
+- "What is phishing?"
+- "How to spot a scam email?"
+- "Phishing email red flags"
+
+Safe Browsing:
+- "How do I browse safely?"
+- "Safe browsing tips"
+- "How to know if a website is safe?"
+
+GitHub Actions CI/CD
+This repository uses GitHub Actions for Continuous Integration. The workflow:
+Triggers: On every push to main/master branch
+Runs on: Windows-latest (for System.Media support)
+Checks:
+Restores NuGet dependencies
+Builds the project in Release configuration
+Verifies successful compilation
+
+CI Workflow Status
+<img width="1894" height="950" alt="image" src="https://github.com/user-attachments/assets/969b6f01-ef8b-408d-89ad-a2adc1a91f7e" />
+
+Commit History
+
+The repository contains 6+ meaningful commits:
+1. Initial commit: Set up project structure
+2. Added voice greeting functionality
+3. Added ASCII art display from JPEG
+4. Added user name collection with validation
+5. Implemented basic response system
+6. Added split functions for string parsing
+7. Added typing effect with character delays
+8. Added GitHub Actions CI workflow
+
+Video Presentation
+An unlisted YouTube video presentation is available demonstrating:
+Full application functionality
+Code structure explanation
+Logic and flow demonstration
+Voice greeting playback
+ASCII art display
+Typing effect in action
+Conversation examples
+
+YOUTUBE Video link: You Tube video link
+https://youtu.be/DzL08JbXbDg 
+
+Technologies Used
+Language: C# (.NET 6.0)
+Audio: System.Media.SoundPlayer
+Image Processing: System.Drawing
+Version Control: Git & GitHub
+CI/CD: GitHub Actions
